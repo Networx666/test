@@ -9,6 +9,10 @@ body {
     sans-serif;
 }
 
+h1 {
+  font-size: 80px;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
