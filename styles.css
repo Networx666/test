@@ -1,0 +1,132 @@
+body {
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-color: black;
+  color: black;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0px 50px 50px 50px;
+  gap: 30px;
+}
+.button {
+  padding: 10px;
+}
+.selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+}
+
+.points {
+  font-size: 80px;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: black;
+  box-shadow: 10px 5px 10px black;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  opacity: 0.8;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  //flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+#SCHERE {
+  background: url(schere.png) no-repeat;
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+#STEIN {
+  background: url(stein.png) no-repeat;
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+#PAPIER {
+  background: url(papier.png) no-repeat;
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background-color: black;
+  border: 20px solid;
+  widht: 1000px;
+}
+
+#SCHERE:hover {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 10px 5px 10px grey;
+  transform: scale(1.1);
+  transition: all 0.1s ease-in-out;
+}
+#STEIN:hover {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 10px 5px 10px grey;
+  transform: scale(1.1);
+  transition: all 0.1s ease-in-out;
+}
+#PAPIER:hover {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 10px 5px 10px grey;
+  transform: scale(1.1);
+  transition: all 0.1s ease-in-out;
+}
+
+#PAPIER:active {
+  transform: scale(1);
+  box-shadow: 0px 0px 0px;
+}
+#STEIN:active {
+  transform: scale(1);
+  box-shadow: 0px 0px 0px;
+}
+#SCHERE:active {
+  transform: scale(1);
+  box-shadow: 0px 0px 0px;
+}
