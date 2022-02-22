@@ -34,15 +34,21 @@ function computerPlay() {
     computerStein.style.color = null;
     computerSchere.style.color = null;
     computerPapier.style.color = null;
+    computerStein.style.border = "2px solid";
+    computerSchere.style.border = "2px solid";
+    computerPapier.style.border = "2px solid";
     let rand = Math.floor(Math.random() * 3) +1;
     if (rand == 1) {
         computerSchere.style.color = "green";
+        computerSchere.style.border = "4px solid";
         return "SCHERE";
     } else if (rand == 2) {
         computerStein.style.color = "green";
+        computerStein.style.border = "4px solid";
         return "STEIN";
     } else {
         computerPapier.style.color = "green";
+        computerPapier.style.border = "4px solid";
         return "PAPIER";
     }
 }
