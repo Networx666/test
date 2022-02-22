@@ -1,67 +1,102 @@
 const buttons = document.querySelectorAll('button');
 const playerScore = document.querySelector('#playerScore');
 const computerScore = document.querySelector('#computerScore');
-console.log("TEXTCONTENT: " + playerScore);
+const computerSchere = document.querySelector('.schere');
+const computerStein = document.querySelector('.stein');
+const computerPapier = document.querySelector('.papier');
+const statusLog = document.querySelector('.status');
 const choice = buttons.forEach((button) => {
-    button.addEventListener('click', () => singleRound(computerPlay(), button.id))
+    button.addEventListener('click', () => {
+        singleRound(computerPlay(), button.id)
+        if (playerScore.textContent == "5") {
+            alert("Player wins!");
+            playerScore.textContent = "0";
+            computerScore.textContent = "0";
+            computerStein.style.color = null;
+            computerSchere.style.color = null;
+            computerPapier.style.color = null;
+            console.log("Player");
+        } else if (computerScore.textContent == "5") {
+            alert("Computer wins!");
+            console.log("computer");
+            playerScore.textContent = "0";
+            computerScore.textContent = "0";
+            computerStein.style.color = null;
+            computerSchere.style.color = null;
+            computerPapier.style.color = null;
+        }
+    })
 });
 
+
+
 function computerPlay() {
+    computerStein.style.color = null;
+    computerSchere.style.color = null;
+    computerPapier.style.color = null;
     let rand = Math.floor(Math.random() * 3) +1;
     if (rand == 1) {
+        computerSchere.style.color = "green";
         return "SCHERE";
     } else if (rand == 2) {
+        computerStein.style.color = "green";
         return "STEIN";
     } else {
+        computerPapier.style.color = "green";
         return "PAPIER";
     }
 }
 
-function writeText(text) {
+/*function writeText(text) {
     const score = document.querySelector("#score");
-
     const content = document.createElement('p');
     content.classList.add('scoreboard');
     content.textContent = text;
     score.appendChild(content);
-}
+}*/
+
+
+computerScore.textContent = "0";
+playerScore.textContent = "0";
 
 function singleRound(computer, player) {
     //const score = document.querySelector('#scoreboard');
     //score.parentNode.removeChild(score);
     player = player.toUpperCase();
     console.log("Deine Wahl: " + player);
-    writeText(`Du wählst: ${player}`);
     console.log("Computer wählt: " + computer);
-    writeText(`computer wählt: ${computer}`);
     if (player == "SCHERE" && computer == "STEIN") {
         computerScore.textContent++;
-        return "Computer wins!";
+        statusLog.textContent = "Computer wins!";
     } else if (player == "SCHERE" && computer == "PAPIER") {
         playerScore.textContent++;
-        return "Player wins!";
+        statusLog.textContent = "Player wins!";
     } else if (player == "STEIN" && computer == "SCHERE") {
         playerScore.textContent++;
-        return "Player wins!";
+        statusLog.textContent = "Player wins!";
     } else if (player == "STEIN" && computer == "PAPIER") {
         computerScore.textContent++;
-        return "Computer wins!";
+        statusLog.textContent = "Computer wins!";
     } else if (player == "PAPIER" && computer == "SCHERE") {
         computerScore.textContent++;
-        return "Computer wins!";
+        statusLog.textContent = "Computer wins!";
     } else if (player == "PAPIER" && computer == "STEIN") {
         playerScore.textContent++;
-        return "Player wins!";
+        statusLog.textContent = "Player wins!";
     } else {
-        return "Unentschieden!";
-    }
+            statusLog.textContent = "Unentschieden!";
+        }
 }
+
 //let rounds = window.prompt("Wieviele Runden?");
 //let playerScore = 0;
 //let computerScore = 0;
 
-
-
+if (playerScore.textContent == "5") {
+    alert("Player wins!");
+} else if (computerScore.textContent == "5") {
+    alert("Computer wins!");
+}
 /*for (i=0; i<3; i++) {
     let game = (singleRound(computerPlay(), choice));
     if (game == "Computer wins!") {
